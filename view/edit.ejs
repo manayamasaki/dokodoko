@@ -1,0 +1,20 @@
+<!-- edit.ejs -->
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>書籍を編集する</title>
+</head>
+<body>
+    <h1>書籍を編集する</h1>
+    <form action="/update/<%= BookshelfUsersInformation[0].Id %>" method="POST">
+        タイトル <input type="text" name="Title" value="<%= BookshelfUsersInformation [0].Title %>"><br>
+        購入済み <input type="number" name="Purchased" value="<%= BookshelfUsersInformation [0].Purchased %>"><br>
+        発売済み <input type="number" name="Released" value="<%= BookshelfUsersInformation [0].Released %>"><br>
+        <button type="submit">更新</button>
+    </form>    
+
+</body>
+</html>
+
+
+

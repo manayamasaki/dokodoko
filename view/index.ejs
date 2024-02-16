@@ -1,0 +1,46 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>本棚</title>
+    <script>
+        function updateCounter(bookId, change,purchased) {
+            if (parseInt(purchased) < 1 && change < 1) {
+        return;
+    }
+            // AJAXリクエストを使ってサーバーに更新を送信する 
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/update-counter/" + bookId + "?change=" + change, true);
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                    // 更新が成功した場合は、ページをリロードして変更を反映する
+                    location.reload();
+                } 
+            };
+            xhr.send();
+            }     
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>タイトル</th>
+            <th>購入済み</th>
+            <th>カウンター</th>
+            <th>発売済み</th>
+            <th>更新</th>
+            <th>削除</th>
+        </tr>
+        <% BookshelfUsersInformation .forEach(function (value) { %>
+        <tr>
+            <td><%= value.Title %></td>
+            <td><%= value.Purchased %></td>
+            <td> <button class="plus" onclick="updateCounter('<%= value.Id %>', 1,'<%= value.Purchased %>')">+</button>
+                <button class="minus" onclick="updateCounter('<%= value.Id %>', -1,'<%= value.Purchased %>')">-</button></td>
+            <td><%= value.Released %></td>
+            <td><a href="/edit/<%= value.Id %>">編集</a></td>
+            <td><a href="/delete/<%= value.Id %>">削除</a></td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
