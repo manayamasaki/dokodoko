@@ -4,10 +4,11 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer>
+    <footer className='footer'>
       ここはフッターだよ
     </footer>
   );
 }
+
 
 export default Footer;
