@@ -1,9 +1,34 @@
 /* src/components/Header.css */
-header {
+/* header {
     height: 10%;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1;
+  } */
+
+  .header {
+    position:relative;
+    background-color: black;
+    height:60px;
+    margin:0;
+    padding:0;
   }
-  
+
+ 
+  .header > .headerContents {
+    position:relative;
+    display:flex;
+    color:white;
+    justify-content:space-between;
+    padding-top:9px;
+  }
+
+  .sitename{
+    margin-left:20px;
+  }
+
+  button {
+    margin-right:20px;
+  }
+ 

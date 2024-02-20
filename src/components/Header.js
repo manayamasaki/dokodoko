@@ -2,12 +2,19 @@
 import React from 'react';
 import './Header.css';
 
-function Header() {
+class Header extends  React.Component {
+  render(){
   return (
-    <header>
-      <h1>DOKODOKO</h1>
+    <header className="header">
+      <div className="headerContents">
+        <div className="sitename">dokodoko</div>
+        {/* <div className="mannga">マンガ</div> */}
+        <button className="loginbutton">ログイン</button>
+       </div>
     </header>
   );
+  }
 }
+
 
 export default Header;
