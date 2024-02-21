@@ -2,60 +2,75 @@
 import React from 'react';
 // import SearchBar from './SearchBar';
 import MyList from './MyList';
+import Search from './Search';
 import Add from './Add';
 import './MainContent.css';
 
 class MainContent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isAdd: false};
+    this.state = {isAdd: 1};
   }
 
-  handleClick(){
-    this.setState({isAdd:true});
+  handleClickOne(){
+    this.setState({isAdd:1});
   }
 
-  handleClickBack(){
-    this.setState({isAdd:false});
+  handleClickTwo(){
+    this.setState({isAdd:2});
+  }
+
+  handleClickThree(){
+    this.setState({isAdd:3});
   }
 
   render(){
     let maincontent;
-    if(this.state.isAdd){
+    if(this.state.isAdd === 1){
       maincontent = (
-        <div className="Addpage">
-          <Add />
+          <div className="MyListpage">
+          <MyList />
         </div>
+      )
+    } else if (this.state.isAdd === 2) {
+      maincontent = (
+        <div className="Serchpage">
+        <Search />
+      </div>
       );
     } else {
       maincontent = (
-        <div className="MyListpage">
-        <MyList />
+        <div className="Addpage">
+        <Add />
       </div>
       );
     }
   
 
   return (
-    <div className="main">
-      <div className="navibar">
-        <div className="navibarContents">
+    <div className="maincontent">
+      <div className="maincontentBar">
           <div 
             className="toMylist"
             style={{ cursor: 'pointer' }}
-            nClick={()=>{this.handleClickBack()}}>
+            onClick={()=>{this.handleClickOne()}}>
               <p>MyList</p>
               {/* <hr className="toMyListhr" color="black" size="10" width="100"></hr> */}
           </div>
           <div
+            className="toSearch"
+            style={{ cursor: 'pointer' }}
+            onClick={()=>{this.handleClickTwo()}}>
+              <p>検索して作品登録</p>
+           </div>
+           <div
             className="toAdd"
             style={{ cursor: 'pointer' }}
-            onClick={()=>{this.handleClick()}}>
-              <p>作品登録</p>
+            onClick={()=>{this.handleClickThree()}}>
+              <p>入力して作品登録</p>
            </div>
-        </div>
+      </div>
                   {maincontent}
-       </div>
     </div>
   );
   }

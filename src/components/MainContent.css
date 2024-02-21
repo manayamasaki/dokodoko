@@ -15,37 +15,32 @@
     z-index: 1;
   } */
   
-  .navibar {
-    position:relative;
-    z-index:1;
-    height:80px;
-    margin:0;
-    padding:0;
-  }
+.maincontentBar {
+  height: 70px;
+  width:100%;
+  padding-left: 40px;
+  background: linear-gradient(-270deg, #F8CFFF 0%, #B6B4FF 40%, #B7FFF6 100% );
+  display:flex;
+  gap:0px 40px;
+}
 
+.toMylist p {
+  font-size:20px;
+  height: 50%;
+}
 
-  /* .navibar::after{
-    content:"";
-    position:absolute;
-    z-index:2;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background: linear-gradient(-270deg, #d31ef0 0%, #4542ee 40%, #15ffe3 100% );
-    opacity:0.4;
-  } */
+.toSearch p {
+  font-size:20px;
+  height: 50%;
+  padding-bottom: 20px;
+  transform: translateY(-10px);
+}
 
-  .navibar > .navibarContents {
-    /* position:relative; */
-    z-index: 3;
-    display:flex;
-    color:black;
-    font-size: 28px;
+.toAdd p {
+  font-size:20px;
+  height: 50%;
+  transform: translateY(-10px);
+}
 
-    >div{
-        margin-left:70px;
-    }
-  }
 
   

@@ -7,28 +7,25 @@
     z-index: 1;
   } */
 
+  * {
+    box-sizing: border-box;
+  }
+
+  @media screen and (max-width:480px){
+  }
+
   .header {
-    position:relative;
-    background-color: black;
-    height:60px;
-    margin:0;
-    padding:0;
-  }
-
- 
-  .header > .headerContents {
-    position:relative;
-    display:flex;
     color:white;
-    justify-content:space-between;
-    padding-top:9px;
+    background-color: black;
+    height:60px;   
   }
 
-  .sitename{
+
+   .headerLeft {
     margin-left:20px;
-  }
+    font-size:18px;
+   }
 
-  button {
-    margin-right:20px;
-  }
+
+
  

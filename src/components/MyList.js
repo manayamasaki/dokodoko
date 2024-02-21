@@ -1,6 +1,9 @@
 
 import React from 'react';
 import MainContent from './MainContent';
+import Reading from './Reading';
+import WannaRead from './WannaRead';
+
 import './MyList.css'; // MyList.cssをインポート
 
 class MyList extends React.Component {
@@ -21,11 +24,11 @@ class MyList extends React.Component {
     let list;
     if(this.state.isWannaRead){
       list = (
-        <h2>読みたいリスト</h2>
+        <WannaRead />
       );
     } else {
       list = (
-        <h2>読んでるリスト</h2>
+        <Reading />
       )
     }
 
