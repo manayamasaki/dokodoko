@@ -32,15 +32,13 @@
 .toSearch p {
   font-size:20px;
   height: 50%;
-  padding-bottom: 20px;
-  transform: translateY(-10px);
 }
 
-.toAdd p {
+.toAdd  {
   font-size:20px;
   height: 50%;
-  transform: translateY(-10px);
 }
+
 
 
   
