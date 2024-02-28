@@ -1,9 +1,14 @@
+
 import React from "react";
+import { Link } from 'react-router-dom'; // Linkをimportする
+import './Login.css';
 
 class Login extends React.Component {
     render(){
         return(
-            <button className="loginbutton">ログイン</button>
+            <div className="loginbutton">
+                <Link to="/login" className="loginLink">ログイン</Link> {/* ログインページへのリンク */}
+            </div>
         )
     }
 }

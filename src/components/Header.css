@@ -20,12 +20,19 @@
     height:60px;   
   }
 
-
+/*
    .headerLeft {
     margin-left:20px;
     font-size:18px;
    }
-
+  
+   .loginbutton {
+    position: relative;
+    right:25px;
+    top: -15px;
+    border-radius: 4px;
+  }
+  */
 
    .loginbutton {
     margin-left:650px;

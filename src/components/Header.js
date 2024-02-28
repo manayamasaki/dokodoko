@@ -13,7 +13,8 @@ class Header extends  React.Component {
           <div className="explanation">マンガとアニメを管理するアプリ</div>
         </div>
         {/* <div className="mannga">マンガ</div> */}
-         <div className="loginbutton"><Login /></div>
+        {/*<div className="loginbutton"> </div>*/}
+        <Login />
        </div>
     </header>
   );

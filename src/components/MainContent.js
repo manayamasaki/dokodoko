@@ -31,7 +31,7 @@ class MainContent extends React.Component {
           <div className="MyListpage">
           <MyList />
         </div>
-      )
+      );
     } else if (this.state.isAdd === 2) {
       maincontent = (
         <div className="Serchpage">
