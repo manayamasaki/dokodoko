@@ -55,19 +55,18 @@ class MainContent extends React.Component {
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickOne()}}>
               <p>MyList</p>
-              {/* <hr className="toMyListhr" color="black" size="10" width="100"></hr> */}
           </div>
           <div
             className="toSearch"
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickTwo()}}>
-              <p>検索して作品登録</p>
+               <p>検索して作品登録</p>
            </div>
            <div
             className="toAdd"
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickThree()}}>
-              <p>入力して作品登録</p>
+               <p>入力して作品登録</p>
            </div>
       </div>
                   {maincontent}
