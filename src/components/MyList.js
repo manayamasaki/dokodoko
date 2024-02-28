@@ -35,14 +35,12 @@ class MyList extends React.Component {
   return (
     <div className="MyListAll">
      <div className="kirikae">
-      <div
-        className="toReading"
+      <div className="toReading"
         style={{ cursor: 'pointer' }}
         onClick={()=>{this.handleClickBack()}}>
           <button>読んでる</button>
       </div>
-      <div
-         className="toWannaRead"
+      <div className="toWannaRead"
          style={{ cursor: 'pointer' }}
          onClick={()=>{this.handleClick()}}>
           <button>読みたい</button>

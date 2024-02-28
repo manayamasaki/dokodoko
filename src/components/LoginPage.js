@@ -69,6 +69,8 @@ class LoginPage extends React.Component {
       );
     } else {
       passwordForm = (
+        <div className ='LoginPage'>
+        <h3>ログインしてください</h3>
         <form onSubmit={() => {this.handleSubmit()}} >
           <p>メールアドレス</p>
           <input
@@ -89,18 +91,16 @@ class LoginPage extends React.Component {
             value='ログイン'
           />
         </form>
+        </div>
       );
     }
         return(
-        <div className ='LoginPage'>
-            <h3>ログインしてください</h3>
+       
             <div className='password-form'>
         {passwordForm}
              </div>
-        </div>
         );
     }
 }
 
 export default LoginPage;
-//

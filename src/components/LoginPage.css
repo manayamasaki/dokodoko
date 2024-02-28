@@ -1,3 +1,4 @@
+
 h3{
     margin-top:5%;
     margin-left:20%;
@@ -63,11 +64,12 @@ h3{
 .HomeLink {
   position:relative;
   display: inline-block;
+  top:300px;;
   width:150px;
   height:60px;
-  left:40%;
-  padding: 8px 12px;
-  background: linear-gradient(-270deg, #F8CFFF 0%, #B6B4FF 40%, #B7FFF6 100% );
+  left:30%;
+  padding: 15px 35px;
+  background: linear-gradient(-270deg, #B7FFF6 0%, #B6B4FF 40%,  #B7FFF6 100% );
   color: black;
   text-decoration: none;
   border: none;
@@ -75,11 +77,6 @@ h3{
 
 }
 
-.HomeLink:hover {
-  background: linear-gradient(-270deg,#B7FFF6 0%, #B6B4FF 40%, #F8CFFF 100% );
-  color:white;
-  border-width: 1px;
-  border-radius: 5px;
-  animation: gradientChange 2s ease infinite;
-}
+
+
 
