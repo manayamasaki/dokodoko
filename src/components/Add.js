@@ -5,7 +5,8 @@ import './Add.css'
 class Add extends React.Component {
     render(){
         return(
-            <h2>きなりさんの追加ページ</h2>
+            <h1>書籍を編集する</h1>
+
         )
     }
 }
