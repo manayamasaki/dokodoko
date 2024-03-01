@@ -63,7 +63,7 @@ class SignupPage extends React.Component {
           アカウントが作成されました
         </div>
         <div className='Home'>
-        <Link to="/login" className="HomeLink">はじめる</Link>
+        <Link to="/login" className="HomeLink">ログインしてはじめる</Link>
         </div>
         </div>
       );
