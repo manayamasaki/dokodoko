@@ -30,7 +30,7 @@
 /* Login.css */
 .loginbutton {
   position:relative;
-  text-align:right ;
+ /* text-align:right ;*/
   top:-30px;
   right:50px;
   
@@ -58,3 +58,18 @@
   transition:0.5s;
 }
 
+
+@media screen and (max-width: 768px) {
+  .loginbutton {
+    text-align: right;
+     
+  }
+
+  .loginLink {
+    display: inline-block; /* ボタンをブロック要素に変更 */
+    top:20px;
+    font-size:10px;
+    padding:8px 12px;
+    margin-left: auto;
+  }
+}
