@@ -49,7 +49,6 @@ function auth(req, name, pass, res) {
         (err, result) => {
             if (err || result.rows.length === 0) {
                 console.error('Authentication failed:', err);
-                // res オブジェクトが定義されていることを確認してからリダイレクトする
                 if (res) {
                     res.redirect('auth.ejs?msg=認証エラー！');
                 } else {
@@ -59,7 +58,6 @@ function auth(req, name, pass, res) {
                 console.log('Authentication successful');
                 // ユーザーが認証成功した場合、セッションに loginid を保存する
                 req.session.loginid = name;
-                // res オブジェクトが定義されていることを確認してからリダイレクトする
                 if (res) {
                     res.redirect(`user/${name}`);
                 } else {
@@ -72,7 +70,6 @@ function auth(req, name, pass, res) {
 
 app.post('/auth', (req, res) => {
     const { name, pass } = req.body;
-    // auth 関数に req も渡して呼び出す
     auth(req, name, pass, res);
 });
 
