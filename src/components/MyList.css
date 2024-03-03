@@ -1,5 +1,4 @@
 
-
 /* . { 
     top: 21%;
     position: fixed;
@@ -8,58 +7,59 @@
     
   } */
  
-.MyListAll {
-  text-align: center;
-}
-
-.kirikae {  
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.toReading button {
-  display: inline-block;
-  font-size: 16px;
-  width: 100px;
-  height: 48px;
-  border-radius: 48px;
-  margin-right: 24px;
-  margin-left: 24px;
-  margin-top:20px;
+  .MyListAll {
+    text-align: center;
+  }
   
-  color: #fff;
-  background-color: #66ccff;
-  border: none;
-  outline: none; 
-}
-
-button:active {
-  position: relative; 
-  top:2px;  
-  box-shadow: none; 
-} 
-
-.toWannaRead button {
-  display: inline-block;
-  font-size: 16px;
-  width: 100px;
-  height: 48px;
-  border-radius: 48px;
-  margin-right: 24px;
-  margin-left: 24px;
-  margin-top:20px;
+  .kirikae {  
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   
-  color: #fff;
-  background-color: #66ccff;
-  border: none;
-  outline: none; 
-}
-
-button:active {
-  position: relative; 
-  top:2px;  
-  box-shadow: none; 
-} 
-
-
+  .toReading button {
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    height: 48px;
+    border-radius: 48px;
+    margin-right: 24px;
+    margin-left: 24px;
+    margin-top:20px;
+    
+    color: #fff;
+    background-color: #66ccff;
+    border: none;
+    outline: none; 
+  }
+  
+  button:active {
+    position: relative; 
+    top:2px;  
+    box-shadow: none; 
+  } 
+  
+  .toWannaRead button {
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
+    height: 48px;
+    border-radius: 48px;
+    margin-right: 24px;
+    margin-left: 24px;
+    margin-top:20px;
+    
+    color: #fff;
+    background-color: #66ccff;
+    border: none;
+    outline: none; 
+  }
+  
+  button:active {
+    position: relative; 
+    top:2px;  
+    box-shadow: none; 
+  } 
+  
+  
+  

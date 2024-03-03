@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
-class LoginPage extends React.Component {
+class SignupPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -60,19 +60,19 @@ class LoginPage extends React.Component {
       passwordForm = (
         <div className='A'>
         <div className='password-submit-message'>
-          ログインしたよ
+          アカウントが作成されました
         </div>
         <div className='Home'>
-        <Link to="/" className="HomeLink">はじめる</Link>
+        <Link to="/login" className="HomeLink">ログインしてはじめる</Link>
         </div>
         </div>
       );
     } else {
       passwordForm = (
         <div className ='LoginPage'>
-        <h3>ログインしてください</h3>
+        <h3>新規会員登録</h3>
         <form onSubmit={() => {this.handleSubmit()}} >
-          <p>ID</p>
+            <p>ID</p>
           <input
             value={this.state.email}
             onChange={(event) => {this.handleEmailChange(event)}}
@@ -88,7 +88,7 @@ class LoginPage extends React.Component {
           
           <input
             type='submit'
-            value='ログイン'
+            value='アカウントを作成'
           />
         </form>
         </div>
@@ -103,4 +103,4 @@ class LoginPage extends React.Component {
     }
 }
 
-export default LoginPage;
+export default SignupPage;

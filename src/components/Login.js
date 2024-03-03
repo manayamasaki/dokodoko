@@ -8,6 +8,7 @@ class Login extends React.Component {
         return(
             <div className="loginbutton">
                 <Link to="/login" className="loginLink">ログイン</Link> {/* ログインページへのリンク */}
+                <Link to="/signup" className="loginLink">新規会員登録</Link> {/* ログインページへのリンク */}
             </div>
         )
     }
