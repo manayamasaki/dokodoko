@@ -3,42 +3,57 @@
     <meta charset="UTF-8">
     <title>本棚</title>
     <script>
-        function updateCounter(bookId, change,purchased) {
-            if (parseInt(purchased) < 1 && change < 1) {
-        return;
-    }
-            // AJAXリクエストを使ってサーバーに更新を送信する 
+        // プラスボタンがクリックされたときの処理
+        function incrementCounter(bookId) {
+            updateCounter(bookId, 1);
+        }
+        
+        // マイナスボタンがクリックされたときの処理
+        function decrementCounter(bookId) {
+            var purchased = parseInt(document.getElementById('purchased_' + bookId).innerText);
+            if (purchased > 0) {
+                updateCounter(bookId, -1);
+            }
+        }
+        
+        // カウンター更新用の関数
+        function updateCounter(bookId, change) {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/update-counter/" + bookId + "?change=" + change, true);
             xhr.onreadystatechange = function() {
-                if(xhr.readyState === 4 && xhr.status === 200) {
-                    // 更新が成功した場合は、ページをリロードして変更を反映する
-                    location.reload();
-                } 
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // 更新が成功したらページをリロードして更新を反映する
+                        location.reload();
+                    } else {
+                        console.error("カウンターの更新に失敗しました");
+                    }
+                }
             };
             xhr.send();
-            }     
+        }
     </script>
 </head>
 <body>
+    <A HREF="/register">本の追加</A>
     <table>
         <tr>
             <th>タイトル</th>
             <th>購入済み</th>
             <th>カウンター</th>
             <th>発売済み</th>
-            <th>更新</th>
             <th>削除</th>
         </tr>
-        <% BookshelfUsersInformation .forEach(function (value) { %>
+        <% bookshelf.forEach(function (value) { %>
         <tr>
-            <td><%= value.Title %></td>
-            <td><%= value.Purchased %></td>
-            <td> <button class="plus" onclick="updateCounter('<%= value.Id %>', 1,'<%= value.Purchased %>')">+</button>
-                <button class="minus" onclick="updateCounter('<%= value.Id %>', -1,'<%= value.Purchased %>')">-</button></td>
-            <td><%= value.Released %></td>
-            <td><a href="/edit/<%= value.Id %>">編集</a></td>
-            <td><a href="/delete/<%= value.Id %>">削除</a></td>
+            <td><%= value.title %></td>
+            <td id="purchased_<%= value.id %>"><%= value.purchased %></td>
+            <td>
+                <button class="plus" onclick="incrementCounter('<%= value.id %>')">+</button>
+                <button class="minus" onclick="decrementCounter('<%= value.id %>')">-</button>
+            </td>
+            <td><%= value.released %></td>
+            <td><a href="/delete/<%= value.id %>">削除</a></td>
         </tr>
         <% }); %>
     </table>
