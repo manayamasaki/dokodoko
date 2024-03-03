@@ -25,8 +25,6 @@ app.use(session({
 }));
 
 
-
-// ユーザー登録
 function create(name, pass, res) {
     pool.query(
         `INSERT INTO "users" (name, pass) VALUES ($1, $2)`, 
