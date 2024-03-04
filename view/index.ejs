@@ -32,10 +32,25 @@
             };
             xhr.send();
         }
+
+     //買いたい本リストに飛ぶためのコード
+     //買いたい本のリストに飛びたい時にloginidを維持するためにsessionを使ってloginidを持ってきているから単純なurlでは飛ぶことができない
+     document.addEventListener('DOMContentLoaded', function() {
+    var kaitaiLink = document.getElementById('kaitaiLink');
+    kaitaiLink.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのリンク動作を無効にする
+        var loginid = kaitaiLink.getAttribute('data-loginid'); // データ属性からloginidを取得
+        window.location.href = '/kaitai/' + loginid; // リダイレクト
+    });
+});
+
+        
+
     </script>
 </head>
 <body>
     <A HREF="/register">本の追加</A>
+    <A id="kaitaiLink" href="#" data-loginid="<%= loginid %>">買いたい本のリスト</A>
     <table>
         <tr>
             <th>タイトル</th>

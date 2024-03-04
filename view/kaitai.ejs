@@ -1,0 +1,22 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>買いたい本リスト</title>
+
+</head>
+<body>
+    <A HREF="/kaitairegister">買いたい本の追加</A>
+    <table>
+        <tr>
+            <th>タイトル</th>
+            <th>購入（削除）</th>
+        </tr>
+        <% kaitai.forEach(function (value) { %>
+        <tr>
+            <td><%= value.title %></td>
+            <td><a href="/purchased/<%= value.id %>">購入した(削除)</a></td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
