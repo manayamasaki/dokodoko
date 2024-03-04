@@ -2,7 +2,6 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const session = require('express-session');
 const { Pool } = require('pg');
 const config = require('./config');
 
@@ -13,6 +12,10 @@ const pool = new Pool(config);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//セッション(idを維持するため)
+//認証のところでloginidをsessionを活用して保存しています
+//それより下のコードのreq.session.loginidで今ログインしているidをいろんなところで活用しています
+const session = require('express-session');
 app.use(session({
     secret: 'secret-key',
     resave: false,
@@ -122,7 +125,7 @@ app.get('/user/:loginid', async (req, res) => {
         req.session.userid = userid;
         const sql = "SELECT * FROM bookshelf WHERE loginid = $1 AND loginid IS NOT NULL ORDER BY title";
         const result = await pool.query(sql, [userid]);
-        res.render('index', { bookshelf: result.rows });
+        res.render('index', { bookshelf: result.rows, loginid: req.session.loginid }); // テンプレートにloginidを渡す
     } catch (error) {
         console.error('Error fetching bookshelf:', error);
         res.status(500).send('本棚の取得に失敗しました');
@@ -155,6 +158,50 @@ app.get('/delete/:id', async (req, res) => {
         res.status(500).send('削除に失敗しました');
     }
 });
+
+// 買いたい本の追加
+app.get('/kaitairegister', (req, res) => res.sendFile(path.join(__dirname, 'kaitairegister.html')));
+app.post('/kaitairegister', async (req, res) => {
+    try {
+        const regiloginid = req.session.loginid;
+        const userData = req.body;
+        const sql = "INSERT INTO kaitai (loginid, title) VALUES ($1, $2)";
+        const values = [regiloginid, userData.title];
+        await pool.query(sql, values);
+        res.send('登録が完了しました');
+    } catch (error) {
+        console.error('Registration failed:', error);
+        res.status(500).send('登録に失敗しました');
+    }
+});
+
+//買いたい本リスト
+app.get('/kaitai/:loginid', async (req, res) => {
+    try {
+        const userid = req.params.loginid;
+        req.session.userid = userid;
+        const sql = "SELECT * FROM kaitai WHERE loginid = $1 AND loginid IS NOT NULL ORDER BY title";
+        const result = await pool.query(sql, [userid]);
+        res.render('kaitai', { kaitai: result.rows, loginid: req.params.loginid });
+    } catch (error) {
+        console.error('Error fetching kaitai:', error);
+        res.status(500).send('本棚の取得に失敗しました');
+    }
+});
+
+// 買いたい本購入済ボタン
+app.get('/purchased/:id', async (req, res) => {
+    try {
+        const bookId = req.params.id;
+        const sql = "DELETE FROM kaitai WHERE id = $1";
+        await pool.query(sql, [bookId]);
+        res.redirect('/kaitai/' + req.session.loginid);
+    } catch (error) {
+        console.error('Deletion failed:', error);
+        res.status(500).send('削除に失敗しました');
+    }
+});
+
 
 
 app.listen(port, () => {
