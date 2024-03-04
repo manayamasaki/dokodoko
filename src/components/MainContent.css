@@ -25,16 +25,20 @@
 }
 
 .toMylist p {
-  font-size:20px;
+  font-weight:bold;
+  margin-top:21px;
+  font-size:22px;
   height: 50%;
 }
 
 .toSearch p {
+  font-weight:bold;
   font-size:20px;
   height: 50%;
 }
 
 .toAdd  {
+  font-weight:bold;
   font-size:20px;
   height: 50%;
 }
@@ -46,6 +50,14 @@
     margin-top: 5px;
   }
 }
+
+.toMylist.selected p,
+.toSearch.selected p,
+.toAdd.selected p {
+
+  color:rgb(65, 65, 229);
+}
+
 
 
   

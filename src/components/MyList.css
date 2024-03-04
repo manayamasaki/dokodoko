@@ -28,7 +28,7 @@
     margin-top:20px;
     
     color: #fff;
-    background-color: #66ccff;
+    background-color: #4d99d8;
     border: none;
     outline: none; 
   }
@@ -50,7 +50,7 @@
     margin-top:20px;
     
     color: #fff;
-    background-color: #66ccff;
+    background-color: #4d99d8;
     border: none;
     outline: none; 
   }
@@ -60,6 +60,13 @@
     top:2px;  
     box-shadow: none; 
   } 
+  .toReading button:hover {
+    background-color:#66ccff ; 
+  }
+  
+  .toWannaRead button:hover {
+    background-color:#66ccff ; 
+  }
   
   
   
