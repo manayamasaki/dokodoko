@@ -1,4 +1,5 @@
 
+
 /* . { 
     top: 21%;
     position: fixed;
@@ -26,10 +27,9 @@
     margin-right: 24px;
     margin-left: 24px;
     margin-top:20px;
-    
-    color: #fff;
-    background-color: #4d99d8;
-    border: none;
+    border:1px solid black;
+    color: black;
+    background-color:white;
     outline: none; 
   }
   
@@ -37,7 +37,10 @@
     position: relative; 
     top:2px;  
     box-shadow: none; 
-  } 
+  }   
+  
+  
+  
   
   .toWannaRead button {
     display: inline-block;
@@ -48,10 +51,9 @@
     margin-right: 24px;
     margin-left: 24px;
     margin-top:20px;
-    
-    color: #fff;
-    background-color: #4d99d8;
-    border: none;
+    color: black;
+    background-color: white;
+    border:1px solid black;
     outline: none; 
   }
   
@@ -59,17 +61,9 @@
     position: relative; 
     top:2px;  
     box-shadow: none; 
-  } 
-  /*
-  .toReading button:hover {
-    background-color:#4d99d8 ; 
-  }
-  
-  .toWannaRead button:hover {
-    background-color:#4d99d8 ; 
-  }
-  */
+  }   
   .toReading button.active,
-.toWannaRead button.active {
-  background-color:#66ccff;
-}
+  .toWannaRead button.active {
+    color:white;
+    background-color:black;
+  }

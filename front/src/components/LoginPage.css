@@ -1,6 +1,6 @@
 h3{
     margin-top:5%;
-    margin-left:20%;
+    margin-left:38%;
 }
 
 
@@ -80,4 +80,15 @@ h3{
   color: black;
   text-decoration: none;
   border-radius: 4px;
+}
+
+.back{
+  position:relative;
+  display: inline-block;
+  top:27px;
+  left:37px;
+  font-size:40px;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px
 }

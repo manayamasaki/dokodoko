@@ -94,6 +94,7 @@ class SignupPage extends React.Component {
     } else {
       passwordForm = (
         <div className ='LoginPage'>
+        <Link to="/" className="back">←</Link>
         <h3>新規会員登録</h3>
         <form onSubmit={() => {this.handleSubmit()}} >
             <p>ID</p>

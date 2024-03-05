@@ -51,12 +51,15 @@
   }
 }
 
+
 .toMylist.selected p,
 .toSearch.selected p,
 .toAdd.selected p {
-
-  color:rgb(65, 65, 229);
+  color: black;
+  position: relative;
+  border-bottom: 3px solid #000;
 }
+
 
 
 
