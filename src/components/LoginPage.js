@@ -33,7 +33,30 @@ class LoginPage extends React.Component {
       }
     
       handleSubmit() {
-        this.setState({isSubmitted: true});
+      fetch('http://localhost:3001/post', {//リクエスト送信
+      method: 'post',//使いたいメソッドを指定
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name:this.state.email,
+        pass:this.state.password
+      })
+    })
+      .then(response => { 
+        return response.json();
+      }
+        )
+      .then(item => {
+        if (Array.isArray(item)) {
+          this.setState({isSubmitted: true}); 
+        } else {
+          console.log('failure');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
       }
 
     render(){
