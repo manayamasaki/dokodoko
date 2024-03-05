@@ -60,13 +60,16 @@
     top:2px;  
     box-shadow: none; 
   } 
+  /*
   .toReading button:hover {
-    background-color:#66ccff ; 
+    background-color:#4d99d8 ; 
   }
   
   .toWannaRead button:hover {
-    background-color:#66ccff ; 
+    background-color:#4d99d8 ; 
   }
-  
-  
-  
+  */
+  .toReading button.active,
+.toWannaRead button.active {
+  background-color:#66ccff;
+}

@@ -31,19 +31,19 @@ class MyList extends React.Component {
         <Reading />
       )
     }
-
+    const { isWannaRead } = this.state;
   return (
     <div className="MyListAll">
      <div className="kirikae">
       <div className="toReading"
         style={{ cursor: 'pointer' }}
         onClick={()=>{this.handleClickBack()}}>
-          <button>読んでる</button>
+          <button className ={!isWannaRead ? 'active' : ''}>読んでる</button>
       </div>
       <div className="toWannaRead"
          style={{ cursor: 'pointer' }}
          onClick={()=>{this.handleClick()}}>
-          <button>読みたい</button>
+          <button className ={isWannaRead ? 'active' : ''}>読みたい</button>
       </div>
      </div>
 
