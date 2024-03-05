@@ -27,7 +27,7 @@ function Reading() {
     .then(response => {
       if (response.ok) {
         // 更新が成功した場合は、ページをリロードして変更を反映する
-        location.reload();
+        window.location.reload();
       } else {
         throw new Error('Failed to update counter');
       }
@@ -45,7 +45,7 @@ function Reading() {
     .then(response => {
       if (response.ok) {
         // 削除が成功した場合は、ページをリロードして変更を反映する
-        location.reload();
+        window.location.reload();
       } else {
         throw new Error('Failed to delete book');
       }
