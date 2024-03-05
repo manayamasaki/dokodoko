@@ -1,0 +1,36 @@
+/* src/components/Header.css */
+/* header {
+    height: 10%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  } */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media screen and (max-width:480px){
+  }
+
+  .header {
+    color:white;
+    background-color: black;
+    height:60px;   
+  }
+
+
+   .headerLeft {
+    margin-left:20px;
+    font-size:18px;
+   }
+
+
+   .loginbutton {
+    margin-left:650px;
+    transform: translateY(-20px);
+   }
+
+
+ 
