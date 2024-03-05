@@ -1,0 +1,75 @@
+
+
+* {
+    box-sizing: border-box;
+  }
+  .loginbutton{
+    position:relative;
+    text-align:right ;
+    top:-25px;
+    right:50px;
+    
+  }
+  button{
+    height: 35px;
+    width:150px;
+    color:black;
+    background-color: white;
+    border-radius: 5px;
+  }
+  button:hover{
+    color:white;
+    background-color: black;
+    border-color:white;
+    border-width: 1px;
+    border-radius: 5px;
+    transition: 0.5s;
+  }
+  
+
+/* Login.css */
+.loginbutton {
+  position:relative;
+ /* text-align:right ;*/
+  top:-30px;
+  right:50px;
+  
+}
+
+.loginLink {
+  position:relative;
+  text-align:right ;
+  display: inline-block;
+  padding: 8px 12px;
+  margin-top:20px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  
+}
+
+.loginLink:hover {
+  background-color: black;
+  color:white;
+  border-width: 1px;
+  border-radius: 5px;
+  transition:0.5s;
+}
+
+
+@media screen and (max-width: 768px) {
+  .loginbutton {
+    text-align: right;
+     
+  }
+
+  .loginLink {
+    display: inline-block; /* ボタンをブロック要素に変更 */
+    top:20px;
+    font-size:10px;
+    padding:8px 12px;
+    margin-left: auto;
+  }
+}
