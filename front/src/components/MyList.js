@@ -4,8 +4,6 @@ import MainContent from './MainContent';
 import Reading from './Reading';
 import WannaRead from './WannaRead';
 // import classNames from 'classnames';
-
-
 import './MyList.css'; // MyList.cssをインポート
 
 class MyList extends React.Component {
@@ -36,7 +34,7 @@ class MyList extends React.Component {
       )
     }
 
- 
+    const { isWannaRead } = this.state;
 
   return (
     <div className="MyListAll">
@@ -45,7 +43,7 @@ class MyList extends React.Component {
         className="toReading"
         style={{ cursor: 'pointer' }}
         onClick={()=>{this.handleClickBack()}}>
-          <button>読んでる</button>
+          <button className ={!isWannaRead ? 'active' : ''}>読んでる</button>
            <div>
       </div>
       </div>
@@ -53,7 +51,7 @@ class MyList extends React.Component {
          className="toWannaRead"
          style={{ cursor: 'pointer' }}
          onClick={()=>{this.handleClick()}}>
-           <button>読みたい</button>
+           <button className ={isWannaRead ? 'active' : ''}>読みたい</button>
       </div>
      </div>
 

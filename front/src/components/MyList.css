@@ -29,7 +29,7 @@
   margin-top:20px;
   
   color: #fff;
-  background-color: #66ccff;
+  background-color:#4d99d8 ;
   border: none;
   outline: none; 
 }
@@ -54,7 +54,7 @@ button:active {
   margin-top:20px;
   
   color: #fff;
-  background-color: #66ccff;
+  background-color: #4d99d8;
   border: none;
   outline: none; 
 }
@@ -64,5 +64,8 @@ button:active {
   top:2px;  
   box-shadow: none; 
 }   
-
+.toReading button.active,
+.toWannaRead button.active {
+  background-color:#66ccff;
+}
 

@@ -31,7 +31,7 @@ class MainContent extends React.Component {
           <div className="MyListpage">
           <MyList />
         </div>
-      )
+      );
     } else if (this.state.isAdd === 2) {
       maincontent = (
         <div className="Serchpage">
@@ -51,19 +51,20 @@ class MainContent extends React.Component {
     <div className="maincontent">
       <div className="maincontentBar">
           <div 
-            className="toMylist"
+            className={`toMylist ${this.state.isAdd === 1 ? 'selected' : ''}`}
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickOne()}}>
               <p>MyList</p>
           </div>
           <div
-            className="toSearch"
+            className={`toSearch ${this.state.isAdd === 2 ? 'selected' : ''}`}
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickTwo()}}>
                <p>検索して作品登録</p>
            </div>
            <div
-            className="toAdd"
+            className= {`toAdd ${this.state.isAdd === 3 ? 'selected' : ''}`}
+
             style={{ cursor: 'pointer' }}
             onClick={()=>{this.handleClickThree()}}>
                <p>入力して作品登録</p>
