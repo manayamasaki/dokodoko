@@ -10,7 +10,7 @@ class Header extends  React.Component {
       <div className="headerContents">
         <div className="headerLeft">
           <div className="sitename">dokodoko</div>
-          <div>マンガとアニメを管理するアプリ</div>
+          <div className="explanation">マンガとアニメを管理するアプリ</div>
         </div>
         {/* <div className="mannga">マンガ</div> */}
          {/*<div className="loginbutton"><Login /></div>*/}
