@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
+
+
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
@@ -34,7 +36,8 @@ class LoginPage extends React.Component {
     
       handleSubmit() {
         // this.setState({isSubmitted: true});
-        fetch('http://localhost:3000/create', {//リクエスト送信
+        fetch('http://localhost:3001/auth', {//リクエスト送信
+        method:"post",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -48,18 +51,22 @@ class LoginPage extends React.Component {
       }
         )
       .then(item => {
-        if (Array.isArray(item)) {
+        if (item.status) {
           this.setState({isSubmitted: true}); 
         } else {
+          this.setState({isSubmitted: false}); 
           console.log('failure');
         }
       })
       .catch(err => {
         console.log(err);
+        this.setState({isSubmitted: false}); 
       });
+      this.setState({isSubmitted: true}); 
       }
+      
 
-    render(){
+      render(){
         let emailErrorText;
     if (this.state.hasEmailError) {
       emailErrorText = (
