@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>本棚</title>
     <link rel="stylesheet" href="/css/index.css">
+
     <script>
         // プラスボタンがクリックされたときの処理
         function incrementCounter(bookId) {
@@ -44,11 +45,6 @@
         window.location.href = '/kaitai/' + loginid; // リダイレクト
     });
 });
-
-//mylist.js
-const isWannaRead = true; // 仮の値、実際の値は適切な値に置き換えてください
-
-res.render('index', { isWannaRead });
         
 
     </script>
@@ -64,44 +60,14 @@ res.render('index', { isWannaRead });
          </div>
       </header>
 
-      <div class="maincontent">
-        <div class="maincontentBar">
-            <div class="toMylist <?php echo $isAdd === 1 ? 'selected' : ''; ?>" style="cursor: pointer;" onclick="handleClickOne()">
-                <p>MyList</p>
-            </div>
-            <div class="toSearch <?php echo $isAdd === 2 ? 'selected' : ''; ?>" style="cursor: pointer;" onclick="handleClickTwo()">
-                <p>検索して作品登録</p>
-            </div>
-            <div class="toAdd <?php echo $isAdd === 3 ? 'selected' : ''; ?>" style="cursor: pointer;" onclick="handleClickThree()">
-                <p>入力して作品登録</p>
-            </div>
-        </div>
-        <?php echo $maincontent; ?>
-    </div>
+      <ul class="nav">
+        <li><a class="choice" href="#" data-loginid="<%= loginid %>">my list</a></li>
+        <li><a href="/register" class="choice" data-loginid="<%= loginid %>">本の追加</a></li>
+        <li><a id="kaitaiLink" href="#" data-loginid="<%= loginid %>" class="choice">買いたい本のリスト</a></li>
+        <li><a href="/kaitairegister" class="choice" data-loginid="<%= loginid %>">買いたい本の追加</a></li>
+    </ul>
     
-
-    <div class="MyListAll">
-        <div class="kirikae">
-            <div class="toReading">
-                <button class="<%= !isWannaRead ? 'active' : '' %>">読んでる</button>
-            </div>
-            <div class="toWannaRead">
-                <button class="<%= isWannaRead ? 'active' : '' %>">読みたい</button>
-            </div>
-        </div>
-    
-
-
-    <A HREF="/register">本の追加</A>
-    <A id="kaitaiLink" href="#" data-loginid="<%= loginid %>">買いたい本のリスト</A>
     <table>
-        <tr>
-            <th>タイトル</th>
-            <th>購入済み</th>
-            <th>カウンター</th>
-            <th>発売済み</th>
-            <th>削除</th>
-        </tr>
         <% bookshelf.forEach(function (value) { %>
         <tr>
             <td><%= value.title %></td>

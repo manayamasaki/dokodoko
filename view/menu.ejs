@@ -1,5 +1,18 @@
-<button onClick="create();">ユーザー作成</button>
-<button onClick="auth();">ユーザー認証</button>
+<head>
+    <meta charset="UTF-8">
+    <title>ドコドコ 漫画巻数記録サイトドコドコ</title>
+    <link rel="stylesheet" href="/css/menu.css">
+</head>
+
+<body>
+    <img src="/images/dokowhite.png" alt="doko" class="doko">
+
+<h1>ようこそドコドコへ!!</h1>
+<p>このサイトでは今読んでいる漫画の巻数を記録することができます</p>
+<div class="button-container">
+    <a href="/create.ejs" class="btn btn--yellow btn--cubic">ユーザー作成</a>
+    <a href="/auth.ejs" class="btn btn--yellow btn--cubic">ユーザー認証</a>
+</div>
 
 <script>
     function create() {
@@ -10,3 +23,5 @@
         location.href = '/auth.ejs';
     }
 </script>
+
+</html>
