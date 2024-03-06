@@ -49,18 +49,22 @@ class SignupPage extends React.Component {
       }
         )
       .then(item => {
-        if (Array.isArray(item)) {
-          this.setState({isSubmitted: true}); 
+        if (item.status) {
+          // const navigate = useNavigate();
+          // navigate('/login');
         } else {
           console.log('failure');
+          this.setState({isSubmitted: false});
         }
       })
       .catch(err => {
         console.log(err);
+        this.setState({isSubmitted: false});
       });
+      this.setState({isSubmitted: true});
       }
 
-    render(){
+      render(){
         let emailErrorText;
     if (this.state.hasEmailError) {
       emailErrorText = (
