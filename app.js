@@ -12,6 +12,9 @@ const pool = new Pool(config);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//cssのファイルと繋ぐ
+app.use(express.static('public'));
+
 //セッション(idを維持するため)
 //認証のところでloginidをsessionを活用して保存しています
 //それより下のコードのreq.session.loginidで今ログインしているidをいろんなところで活用しています
