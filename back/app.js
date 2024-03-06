@@ -22,11 +22,11 @@ app.use(session({
     secret: 'secret-key',
     resave: false,
     saveUninitialized: true,
-    cookie: {
-        secure: false,
-        httpOnly: true,
-        maxAge: 24 * 60 * 60 * 1000
-    }
+    // cookie: {
+    //     secure: false,
+    //     httpOnly: true,
+    //     maxAge: 24 * 60 * 60 * 1000
+    // }
 }));
 
 const whitelist = ['http://localhost:3000'];
@@ -52,10 +52,12 @@ function create(name, pass, res) {
         (err, result) => {
             if (err) {
                 console.error('Error creating user:', err);
-                res.redirect('auth.ejs?msg=作成エラー！');
+                res.json({status:false});
+                //res.redirect('create?msg=作成エラー！');
             } else {
                 console.log('User created successfully');
-                //res.redirect('auth.ejs?msg=作成OK！');
+                res.json({status:true});
+                //res.redirect('create?msg=作成OK！');
             }
         }
     );
@@ -69,22 +71,26 @@ function auth(req, name, pass, res) {
         (err, result) => {
             if (err || result.rows.length === 0) {
                 console.error('Authentication failed:', err);
+                res.json({status:false});
                 // res オブジェクトが定義されていることを確認してからリダイレクトする
-                if (res) {
-                    res.redirect('auth.ejs?msg=認証エラー！');
-                } else {
-                    console.error('res オブジェクトが未定義です。');
-                }
+                // if (res) {
+                //     res.redirect('auth.ejs?msg=認証エラー！');
+                // } else {
+                //     console.error('res オブジェクトが未定義です。');
+                    
+                // }
             } else {
                 console.log('Authentication successful');
+                res.json({status:true});
                 // ユーザーが認証成功した場合、セッションに loginid を保存する
-                req.session.loginid = name;
+                // req.session.loginid = name;
+                
                 // res オブジェクトが定義されていることを確認してからリダイレクトする
-                if (res) {
-                    res.redirect(`user/${name}`);
-                } else {
-                    console.error('res オブジェクトが未定義です。');
-                }
+                // if (res) {
+                //     res.redirect(`user/${name}`);
+                // } else {
+                //     console.error('res オブジェクトが未定義です。');
+                // }
             }
         }
     );
