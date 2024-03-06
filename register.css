@@ -1,0 +1,100 @@
+/* header */
+* {
+    box-sizing: border-box;
+  }
+  
+  @media screen and (max-width: 480px) {
+    /* ここに480px以下の画面サイズに対するスタイルを追加します */
+  }
+  
+  .header {
+    color: white;
+    background-color: black;
+    height: 60px;
+  }
+  
+  .headerContents {
+    display: flex;
+    justify-content: space-between; /* アイテムを水平方向に均等に配置します */
+    align-items: center; /* アイテムを垂直方向に中央寄せします */
+  }
+  
+  .headerLeft {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .sitename {
+    font-size: 20px;
+    text-align: left;
+  }
+  
+  .explanation {
+    font-size: 11px;
+  }
+  
+
+
+/*目次*/
+.nav {
+  display: flex;
+  height: 2em;
+  margin: auto;
+  padding: 0px;
+  }
+  
+  .nav > li {
+  width: 25%;
+  }
+  
+  .nav li {
+  padding: 0px;
+  border: 1px solid #FFFFFF;
+  list-style: none;
+  position: relative;
+  padding: 0px;
+  }
+  
+  .nav li a {
+  background: #56839f;
+  color: #FFFFFF;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  text-decoration: none;
+  border-right: 1px solid #FFFFFF;
+  width: 100%;
+  }
+  
+  .nav ul {
+  margin: 0px;
+  padding: 0px;
+  
+  }
+  
+  .nav li li {
+  height: 0px;
+  overflow: hidden;
+  transition: .5s;
+  padding: 0px;
+  width: 100%;
+  list-style: none;
+  }
+  
+  .nav li li a {
+  border-top: 1px solid #FFFFFF;
+  }
+  
+  .nav li:hover > ul > li {
+  height: 2em;
+  overflow: visible;
+  padding: 0px;
+  }
+  
+  .nav li ul li ul {
+      left: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
