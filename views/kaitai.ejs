@@ -1,0 +1,72 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>買いたい本リスト</title>
+    <link rel="stylesheet" href="/css/kaitai.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var myListLink = document.querySelector('.nav .choice'); // "my list"リンク
+    var registerLink = document.querySelector('.nav a[href="/register"]'); // "本の追加"リンク
+    var kaitaiRegisterLink = document.querySelector('.nav a[href="/kaitairegister"]'); // "買いたい本の追加"リンク
+    var kaitaiLink = document.getElementById('kaitaiLink'); // "買いたい本のリスト"リンク
+
+    // "my list"リンクがクリックされた時の処理
+    myListLink.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのリンク動作を無効にする
+        // ユーザーのログインIDを取得
+        var loginid = myListLink.getAttribute('data-loginid');
+        // "my list"ページにリダイレクト
+        window.location.href = `/user/${loginid}`;
+    });
+
+
+    // "買いたい本のリスト"リンクがクリックされた時の処理
+    kaitaiLink.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのリンク動作を無効にする
+        // ユーザーのログインIDを取得
+        var loginid = kaitaiLink.getAttribute('data-loginid');
+        // "買いたい本のリスト"ページにリダイレクト
+        window.location.href = `/kaitai/${loginid}`;
+    });
+});
+
+
+    </script>
+
+</head>
+<body>
+
+
+    <header class="header">
+        <div class="headerContents">
+            <div class="headerLeft">
+                <div class="sitename">dokodoko</div>
+                <div class="explanation">マンガとアニメを管理するアプリ</div>
+              </div>
+         </div>
+      </header>
+
+      <ul class="nav">
+        
+        <li> <a class="choice">my list</a></li>
+        <li><A HREF="/register" >本の追加</A></li>
+        <li><A id="kaitaiLink" href="#" data-loginid="<%= loginid %>" class choice>買いたい本のリスト</A></li>
+        <li><a href="/kaitairegister" class="choice">買いたい本の追加</a></li>
+      </ul>
+     
+    <table>
+
+    <table>
+        <tr>
+            <th>タイトル</th>
+            <th>購入（削除）</th>
+        </tr>
+        <% kaitai.forEach(function (value) { %>
+        <tr>
+            <td><%= value.title %></td>
+            <td><a href="/purchased/<%= value.id %>">購入した(削除)</a></td>
+        </tr>
+        <% }); %>
+    </table>
+</body>
+</html>
