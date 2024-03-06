@@ -1,0 +1,30 @@
+<head>
+    <meta charset="UTF-8">
+    <title>ドコドコ 漫画巻数記録サイトドコドコ</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Dela+Gothic+One&family=Monomaniac+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src="/image/dokowhite.png" alt="doko" class="doko">
+
+<h1>ようこそドコドコへ!!</h1>
+<p>このサイトでは今読んでいる漫画の巻数を記録することができます</p>
+<div class="button-container">
+    <a href="/create.ejs" class="btn btn--yellow btn--cubic">ユーザー作成</a>
+    <a href="/auth.ejs" class="btn btn--yellow btn--cubic">ユーザー認証</a>
+</div>
+
+<script>
+    function create() {
+        location.href = '/create.ejs';
+    }
+
+    function auth() {
+        location.href = '/auth.ejs';
+    }
+</script>
+
+</html>
