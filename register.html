@@ -4,13 +4,44 @@
 <head>
 	<meta charset="UTF-8">
 	<title>本棚追加機能</title>
+    <link rel=“stylesheet” href=“/css/kaitairegister.css”>
+    <script>
+        //買いたい本リストに飛ぶためのコード
+     //買いたい本のリストに飛びたい時にloginidを維持するためにsessionを使ってloginidを持ってきているから単純なurlでは飛ぶことができない
+     document.addEventListener('DOMContentLoaded', function() {
+    var kaitaiLink = document.getElementById('kaitaiLink');
+    kaitaiLink.addEventListener('click', function(event) {
+        event.preventDefault(); // デフォルトのリンク動作を無効にする
+        var loginid = kaitaiLink.getAttribute('data-loginid'); // データ属性からloginidを取得
+        window.location.href = '/kaitai/' + loginid; // リダイレクト
+    });
+});
+        
+    </script>
 </head>
+
 <body>
+
+    <header class="header">
+        <div class="headerContents">
+            <div class="headerLeft">
+                <div class="sitename">dokodoko</div>
+                <div class="explanation">マンガとアニメを管理するアプリ</div>
+              </div>
+         </div>
+      </header>
+
+     
+    <table>
 <h1>本棚に追加</h1>
 <form action="/register" method="POST">
     タイトル <input type="text" name="title"><br>
     今持っている巻数<input type="number" name="purchased"><br>
     <button type="submit">送信</button>
+
+    <button onclick="window.history.back()">戻る</button>
+
+    
 </form>
 </body>
 </html>

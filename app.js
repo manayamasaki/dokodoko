@@ -103,7 +103,7 @@ app.post('/auth', (req, res) => {
 });
 
 // 本棚追加
-app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'register.html')));
+app.get('/register', (req, res) => res.sendFile(path.join(__dirname, 'kaitairegister.html')));
 app.post('/register', async (req, res) => {
     try {
         const regiloginid = req.session.loginid;
