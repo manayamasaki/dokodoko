@@ -1,10 +1,10 @@
 //config.js
 //postgersql
 module.exports = {
-    database: PGNAME,
-    user: PGUSER,
-    password: PGPASS,
-    host: PGHOST,
+    database: process.env.PGNAME,
+    user: process.env.PGUSER,
+    password: process.env.PGPASS,
+    host: process.env.PGHOST,
   
     ssl: {
       rejectUnauthorized: false
