@@ -123,6 +123,7 @@ app.post('/register/:loginid', async (req, res) => {
         
     } catch (error) {
         console.error('Registration failed:', error);
+        const regiloginid = req.session.loginid;
         const redirect=regiloginid+"?msg=登録に失敗しました";
         res.redirect(redirect);
         // res.status(500).send('登録に失敗しました');
